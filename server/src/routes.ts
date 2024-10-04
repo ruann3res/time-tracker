@@ -9,3 +9,4 @@ routes.get('/', (req: Request, res: Response) => {
 
   return res.json({ name, author, description, version });
 });
+
