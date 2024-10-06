@@ -32,6 +32,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
+    "dayjs": "^1.11.13",
     "dotenv": "^16.4.5",
     "express": "^4.21.0",
     "mongoose": "^8.7.0",

@@ -14,3 +14,6 @@ routes.get('/', (req: Request, res: Response) => {
 });
 
 routes.post('/habits', habitsController.store);
+routes.get('/habits', habitsController.index);
+routes.delete('/habits/:id', habitsController.delete);
+routes.patch('/habits/:id/toggle', habitsController.toggle);
