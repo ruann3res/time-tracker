@@ -84,10 +84,7 @@ export class HabitsController {
 
     if (!validParams.success) {
       const errors = buildValidationErrorMessage(validParams.error.issues);
-
-      return res.status(422).json({
-        message: errors,
-      });
+      return res.status(422).json({ message: errors });
     }
 
     const findHabit = await habitModel.findOne({
@@ -95,9 +92,7 @@ export class HabitsController {
     });
 
     if (!findHabit) {
-      return res.status(404).json({
-        message: 'Not found',
-      });
+      return res.status(404).json({ message: 'Habit not found' });
     }
 
     const now = dayjs().startOf('day').toISOString();
@@ -123,7 +118,7 @@ export class HabitsController {
         },
       );
 
-      return response.status(200).json(habitUpdated);
+      return res.status(200).json(habitUpdated);
     }
 
     const habitUpdated = await habitModel.findOneAndUpdate(
@@ -140,6 +135,6 @@ export class HabitsController {
       },
     );
 
-    return response.status(200).json(habitUpdated);
+    return res.status(200).json(habitUpdated);
   };
 }
